@@ -1,6 +1,8 @@
 <template>
+<div>
+<canvas ref="canvas"></canvas>
   <div id="container" class="absolute text-white text-center" style="top: 50%; transform: translate(-50%, -50%); left: 50%;" >
-        <a href="https://www.keithsinclair.co.za/" target="_blank"><img src="/logo.png" alt="My Color Logo" /></a>
+        <a href="https://www.keithsinclair.co.za/" target="_blank"><img src="/logo.png" alt="My Color Logo" class="myLogo" /></a>
         <a href="https://www.keithsinclair.co.za/" target="_blank"><h1 id="myName" class="font-roboto text-4xl  pt-2 opacity-0">Keith Sinclair</h1></a>
         <div class="absolute max-w-4xl p-4 rounded-lg shadow opacity-0" id="myName" > 
         <div class="h-3 text-5xl text-left text-white-600 mb-2 opacity-0" id="myParagraph">“</div>        
@@ -9,6 +11,7 @@
         <a href="https://www.keithsinclair.co.za/" target="_blank" class="border px-4 py-2 rounded-full text-sm mt-8  inline-block opacity-0 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 font-exo uppercase" id="myWorkBtn" >View My Work</a>
       </div>             
     </div>
+  </div>
 </template>
 
 <script>
@@ -68,13 +71,13 @@ function generatePlane(){
 
 const scene = new Scene()
 const camera = new PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000)
-const renderer = new WebGLRenderer()
+const renderer = new WebGLRenderer({canvas: this.$refs.canvas })
 
 new OrbitControls(camera, renderer.domElement)
 
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio)
-document.body.appendChild(renderer.domElement)
+//document.body.appendChild(renderer.domElement)
 
 
 const planeGeometry = new PlaneGeometry(world.plane.width,world.plane.height,world.plane.widthSegments,world.plane.heightSegments)
@@ -221,7 +224,7 @@ document.querySelector('#myWorkBtn').addEventListener('click', (e) => {
     duration: 1.5,
     delay: 2,
     onComplete: () => {
-      
+      this.$router.push('/work')
     }
   })
 })
@@ -259,7 +262,7 @@ body {
   text-shadow: 2px 2px 3px #fff;
 }
 
-img {
+.myLogo {
   max-width: 100%;
   height: auto;
   display: block;
@@ -270,7 +273,7 @@ img {
   border-radius: 3rem;
 }
 
-img:hover {
+.myLogo:hover {
   filter: grayscale(70%);
   background: linear-gradient(
     160deg,

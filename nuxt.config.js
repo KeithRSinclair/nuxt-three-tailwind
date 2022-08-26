@@ -13,7 +13,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
-    ]
+    ],    
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -34,12 +34,11 @@ export default {
     [
       '@nuxtjs/google-fonts',
       {
-        families: {
-          "Roboto Mono": true,
-          "Exo 2": {
-            wght: [200],
-            ital: [100]
-          },
+        families: {          
+          'Roboto+Mono': true,
+          'Exo+2': {            
+            ital: [700]
+          },          
         },
         subsets: ['latin'],
         display: 'swap',
