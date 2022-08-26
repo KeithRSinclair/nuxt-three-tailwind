@@ -1,1 +1,1 @@
-Building a Portfolio site that uses Nuxt.js and Three.js
+Building a Portfolio site that uses Nuxt.js and Three.js. It also uses the Green Sock for animation and Tailwind for styling. To check it out go to https://keiths-nuxt-three-tailwind-portfolio.netlify.app/
