@@ -20,9 +20,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import gsap from 'gsap'
 export default {
   mounted(){
-const dat = require('dat.gui')
 
-const gui = new dat.GUI()
 const world = {
   plane: {
     width: 400,
@@ -31,11 +29,6 @@ const world = {
     heightSegments: 50
   }
 }
-
-gui.add(world.plane, 'width', 1, 800).step(1).onChange(generatePlane)
-gui.add(world.plane, 'height', 1, 800).step(1).onChange(generatePlane)
-gui.add(world.plane, 'widthSegments', 1, 100).step(1).onChange(generatePlane)
-gui.add(world.plane, 'heightSegments', 1, 100).step(1).onChange(generatePlane)
 
 function generatePlane(){
   planeMesh.geometry.dispose()
