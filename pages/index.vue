@@ -1,7 +1,7 @@
 <template>
 <div>
 <canvas ref="canvas"></canvas>
-  <div id="container" class="absolute text-white text-center" style="top: 50%; transform: translate(-50%, -50%); left: 50%;" >
+  <div id="container" class="absolute text-white text-center" style="top: 35%; transform: translate(-50%, -50%); left: 50%;" >
         <a href="https://www.keithsinclair.co.za/" target="_blank"><img src="/logo.png" alt="My Color Logo" class="myLogo" /></a>
         <a href="https://www.keithsinclair.co.za/" target="_blank"><h1 id="myName" class="font-roboto text-4xl  pt-2 opacity-0">Keith Sinclair</h1></a>
         <div class="absolute max-w-4xl p-4 rounded-lg shadow opacity-0" id="myName" > 
